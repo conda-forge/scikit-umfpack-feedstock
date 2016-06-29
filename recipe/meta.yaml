@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: scikit-umfpack
@@ -6,13 +6,8 @@ package:
 
 source:
   fn: scikit-umfpack--{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
-  sha256: 9ebfb4ac4cd1ec545a9211160c65129a77b6e2fab02d8cfa30b10278f5773fd1
-  patches:
-    # fix osx linking bug using solution from commit 987af60 in master
-    - setup.patch
-    # fix for Python 3 compatiblility as fixed in master by commit 4bdf87a
-    - py3.patch
+  url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
+  sha256: eb27d4b4d8fe39d059fbe214f087e5da3206e1d013941daf373d3b96a283044d
 
 build:
   number: 0
