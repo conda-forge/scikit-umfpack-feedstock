@@ -1,4 +1,4 @@
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: scikit-umfpack
@@ -7,7 +7,7 @@ package:
 source:
   fn: scikit-umfpack--{{ version }}.tar.gz
   url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
-  sha256: eb27d4b4d8fe39d059fbe214f087e5da3206e1d013941daf373d3b96a283044d
+  sha256: 9c8935717b17e8b43ad8ec989c2ca0e48c1e1b01fe0d1a16e19feecde2ee9524
 
 build:
   number: 0
@@ -42,3 +42,4 @@ about:
 extra:
     recipe-maintainers:
       - grlee77
+      - cmutel
