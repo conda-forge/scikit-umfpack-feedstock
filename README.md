@@ -33,7 +33,6 @@ conda search scikit-umfpack --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
