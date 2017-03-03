@@ -1,5 +1,8 @@
 {% set version = "0.2.3" %}
 
+# explicitly pin openblas to avoid issue of potential mismatch as seen in gh-8
+{% set variant = "openblas" %}
+
 package:
   name: scikit-umfpack
   version: {{ version }}
@@ -10,11 +13,15 @@ source:
   sha256: 9c8935717b17e8b43ad8ec989c2ca0e48c1e1b01fe0d1a16e19feecde2ee9524
 
 build:
-  number: 0
   skip: True  # [win]
+  number: 200
+  features:
+    - blas_{{ variant }}
 
 requirements:
   build:
+    - blas 1.1 {{ variant }}
+    - openblas 0.2.19|0.2.19.*
     - python
     - numpy x.x
     - scipy
@@ -22,6 +29,8 @@ requirements:
     - swig
     - setuptools
   run:
+    - blas 1.1 {{ variant }}
+    - openblas 0.2.19|0.2.19.*
     - python
     - numpy x.x
     - scipy
