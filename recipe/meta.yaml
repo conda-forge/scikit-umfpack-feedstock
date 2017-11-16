@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [win]
-  number: 200
+  number: 201
   features:
     - blas_{{ variant }}
 
@@ -23,7 +23,7 @@ requirements:
     - blas 1.1 {{ variant }}
     - openblas 0.2.19|0.2.19.*
     - python
-    - numpy x.x
+    - numpy 1.11.*
     - scipy
     - suitesparse
     - swig
@@ -32,7 +32,7 @@ requirements:
     - blas 1.1 {{ variant }}
     - openblas 0.2.19|0.2.19.*
     - python
-    - numpy x.x
+    - numpy >=1.11
     - scipy
     - suitesparse
     - setuptools
