@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 # explicitly pin openblas to avoid issue of potential mismatch as seen in gh-8
 {% set variant = "openblas" %}
@@ -10,7 +10,7 @@ package:
 source:
   fn: scikit-umfpack--{{ version }}.tar.gz
   url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
-  sha256: 6236856ed34a74a541028a80989372e956ccfbd2751de0ee74b7e0800f50f3b7
+  sha256: 9ca57adf461a60ef96871c6228f218ef233acc5b0ca147788979a683d3440117
 
 build:
   skip: True  # [win]
