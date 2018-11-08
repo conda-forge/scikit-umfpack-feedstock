@@ -8,7 +8,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: scikit-umfpack--{{ version }}.tar.gz
   url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
   sha256: 9ca57adf461a60ef96871c6228f218ef233acc5b0ca147788979a683d3440117
 
@@ -19,20 +18,20 @@ build:
     - blas_{{ variant }}
 
 requirements:
-  build:
+  host:
     - blas 1.1 {{ variant }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     - python
-    - numpy 1.11.*
+    - numpy
     - scipy
     - suitesparse
     - swig
     - setuptools
   run:
     - blas 1.1 {{ variant }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     - python
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
     - scipy
     - suitesparse
     - setuptools
@@ -45,7 +44,7 @@ test:
 
 about:
   home: https://scikit-umfpack.github.io/scikit-umfpack
-  license: GPL 2
+  license: GPL-2.0
   summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.
 
 extra:
