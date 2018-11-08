@@ -3,7 +3,7 @@ About scikit-umfpack
 
 Home: https://scikit-umfpack.github.io/scikit-umfpack
 
-Package license: GPL 2
+Package license: GPL-2.0
 
 Feedstock license: BSD 3-Clause
 
