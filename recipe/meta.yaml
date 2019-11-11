@@ -43,6 +43,7 @@ test:
 about:
   home: https://scikit-umfpack.github.io/scikit-umfpack
   license: GPL-2.0
+  license_file: LICENSE
   summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.
 
 extra:
