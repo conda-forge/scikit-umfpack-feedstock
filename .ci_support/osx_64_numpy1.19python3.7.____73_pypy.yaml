@@ -5,7 +5,7 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 libblas:
@@ -23,7 +23,7 @@ pin_run_as_build:
 python:
 - 3.7.* *_73_pypy
 suitesparse:
-- '5.6'
+- '5'
 target_platform:
 - osx-64
 zip_keys:
