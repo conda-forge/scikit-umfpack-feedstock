@@ -1,4 +1,4 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 # explicitly pin openblas to avoid issue of potential mismatch as seen in gh-8
 
@@ -7,8 +7,9 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
-  sha256: 9ca57adf461a60ef96871c6228f218ef233acc5b0ca147788979a683d3440117
+  git_url: https://github.com/michaelweinold/scikit-umfpack
+  git_tag: {{ version }}
+  # compare: https://stackoverflow.com/a/22565201
 
 build:
   skip: True  # [win]
@@ -18,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - swig
   host:
     - libblas
     - libcblas
@@ -25,7 +27,6 @@ requirements:
     - numpy
     - scipy
     - suitesparse
-    - swig
     - setuptools
   run:
     - python
