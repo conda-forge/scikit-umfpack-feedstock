@@ -198,4 +198,5 @@ Feedstock Maintainers
 
 * [@cmutel](https://github.com/cmutel/)
 * [@grlee77](https://github.com/grlee77/)
+* [@michaelweinold](https://github.com/michaelweinold/)
 
