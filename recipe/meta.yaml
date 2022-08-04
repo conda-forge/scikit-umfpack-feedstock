@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [win]
-  number: 1004
+  number: 1006
   features:
 
 requirements:
@@ -51,3 +51,4 @@ extra:
     recipe-maintainers:
       - grlee77
       - cmutel
+      - michaelweinold
