@@ -30,6 +30,7 @@ requirements:
     - libblas
     - libcblas
     - python
+    - pip
     - numpy
     - scipy
     - suitesparse
