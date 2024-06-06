@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export CFLAGS="${CFLAGS} -I$PREFIX/include/suitesparse"
 export UMFPACK="${PREFIX}/lib"
 
-$PYTHON setup.py install --single-version-externally-managed --record record.txt
+$PYTHON -m pip install --no-deps --ignore-installed -vv .
