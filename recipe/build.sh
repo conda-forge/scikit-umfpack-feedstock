@@ -1,5 +1,9 @@
 #!/bin/bash
 
-export UMFPACK="${PREFIX}/lib"
+cat <<EOF > site.cfg
+[umfpack]
+include_dirs = $PREFIX/include/suitesparse
+library_dirs = $PREFIX/lib
+EOF
 
-$PYTHON setup.py install --single-version-externally-managed --record record.txt
+$PYTHON -m pip install --no-build-isolation --no-deps -vv .
