@@ -15,7 +15,10 @@ source:
 
 build:
   number: 0
-  script: $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
+  script:
+    interpreter: bash
+    content: |
+      $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
 
 requirements:
   build:
