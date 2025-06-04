@@ -16,17 +16,16 @@ source:
 build:
   number: 0
   script:
-    interpreter: bash
-    content: |
-      $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
+    - if: unix
+      then:
+        - $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
+      else:
+        - "%PYTHON% -m pip install -vv --no-deps ."
 
 requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
-    - if: win
-      then:
-        - m2-bash
     - if: build_platform != target_platform
       then:
         - python
