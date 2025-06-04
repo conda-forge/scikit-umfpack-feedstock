@@ -16,7 +16,7 @@ source:
 build:
   number: 1
   skip: win
-  script: $PYTHON -m pip install -vv --no-deps .
+  script: $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
 
 requirements:
   build:
