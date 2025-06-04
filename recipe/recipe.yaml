@@ -24,6 +24,9 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
+    - if: win
+      then:
+        - bash
     - if: build_platform != target_platform
       then:
         - python
