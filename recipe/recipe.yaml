@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  version: 0.3.3
+
+package:
+  name: scikit-umfpack
+  version: ${{ version }}
+
+source:
+  # url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-${{ version }}.tar.gz
+  # sha256: 464534529de182f2444809807f14133b7fee86605c167060917f115a31633ec4
+  git: https://github.com/scikit-umfpack/scikit-umfpack
+  rev: 93602f3302de070a84cca609433dc234a8fd3afb
+
+build:
+  number: 1
+  skip: win
+  script: $PYTHON -m pip install -vv --no-deps .
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - meson-python
+        - numpy
+    - pkg-config
+    - swig
+  host:
+    - libumfpack
+    - python
+    - meson-python
+    - pip
+    - numpy
+  run:
+    - scipy
+
+tests:
+  - python:
+      imports:
+        - scikits.umfpack
+  - script: pytest -v --pyargs scikits.umfpack
+    requirements:
+      run:
+        - pytest
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.
+  homepage: https://scikit-umfpack.github.io/scikit-umfpack
+
+extra:
+  recipe-maintainers:
+    - grlee77
+    - cmutel
+    - michaelweinold
