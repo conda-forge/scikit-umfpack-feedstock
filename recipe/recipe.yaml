@@ -14,8 +14,7 @@ source:
   rev: 93602f3302de070a84cca609433dc234a8fd3afb
 
 build:
-  number: 1
-  skip: win
+  number: 0
   script: $PYTHON -m pip install -vv --no-deps --config-settings=setup-args=${MESON_ARGS// / --config-settings=setup-args=} .
 
 requirements:
