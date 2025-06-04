@@ -10,8 +10,8 @@ package:
 source:
   # url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-${{ version }}.tar.gz
   # sha256: 464534529de182f2444809807f14133b7fee86605c167060917f115a31633ec4
-  url: https://github.com/minrk/scikit-umfpack/archive/93602f3302de070a84cca609433dc234a8fd3afb.tar.gz
-  sha256: 98bf1ba91b5f64115773b878dd977704cac33346577d9748f88077af5efe202a
+  url: https://github.com/minrk/scikit-umfpack/archive/4e1af435088b608f48f5b7331a1ed13bacb9e194.tar.gz
+  sha256: 9dfc2372dd22f48431f30a10ce07f27ca97ed4b11c1d37b6338696de26a13246
 
 build:
   number: 0
