@@ -1,4 +1,5 @@
-{% set version = "0.3.3" %}
+{% set name = "scikit-umfpack" %}
+{% set version = "0.4.2" %}
 
 # explicitly pin openblas to avoid issue of potential mismatch as seen in gh-8
 
@@ -7,23 +8,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz
-  sha256: 464534529de182f2444809807f14133b7fee86605c167060917f115a31633ec4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 7cd652e6559804a52379f4ff367cfad54d6f7a6fc65a5e0bd26d26a1282c3f64
 
 build:
-  skip: True  # [win]
-  number: 1
+  number: 0
   features:
+  script:
+    - {{ PYTHON }} -m pip install . --no-deps -vvv -Csetup-args=${MESON_ARGS// / -Csetup-args=}  # [unix]
+    - {{ PYTHON }} -m pip install . --no-deps -vvv                                               # [win]
+  run_exports:
+    - {{ pin_subpackage('scikit-umfpack', max_pin='x.x') }}
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - meson-python                           # [build_platform != target_platform]
+    - pkg-config
     - swig
   host:
     - libblas
@@ -33,6 +38,8 @@ requirements:
     - scipy
     - suitesparse
     - setuptools
+    - meson-python
+    - pip
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -42,9 +49,15 @@ requirements:
 
 test:
   requires:
-    - nose
-  imports:
-    - scikits.umfpack
+    - pytest
+    - numpy
+    - scipy
+    - pip
+  source_files:
+    - scikits/umfpack/tests
+  commands:
+    - python -m pip check
+    - python -m pytest scikits/umfpack/tests
 
 about:
   home: https://scikit-umfpack.github.io/scikit-umfpack
@@ -57,3 +70,4 @@ extra:
       - grlee77
       - cmutel
       - michaelweinold
+      - JarrettSJohnson
