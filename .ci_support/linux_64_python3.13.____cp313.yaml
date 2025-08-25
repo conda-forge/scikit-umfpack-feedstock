@@ -1,31 +1,28 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '15'
+- '14'
+cdt_name:
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libcblas:
-- 3.9 *netlib
-macos_machine:
-- x86_64-apple-darwin13.4.0
+- 3.9.* *netlib
 numpy:
-- '1.21'
+- '2'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_73_pypy
+- 3.13.* *_cp313
 suitesparse:
-- '5'
+- '7'
 target_platform:
-- osx-64
-zip_keys:
-- - python
-  - numpy
+- linux-64
