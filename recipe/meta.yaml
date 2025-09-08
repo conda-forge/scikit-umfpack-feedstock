@@ -53,6 +53,7 @@ test:
     - numpy
     - scipy
     - pip
+    - suitesparse
   source_files:
     - scikits/umfpack/tests
   commands:
