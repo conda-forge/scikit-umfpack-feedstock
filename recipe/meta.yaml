@@ -12,7 +12,7 @@ source:
   sha256: 7cd652e6559804a52379f4ff367cfad54d6f7a6fc65a5e0bd26d26a1282c3f64
 
 build:
-  number: 0
+  number: 1
   features:
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vvv -Csetup-args=${MESON_ARGS// / -Csetup-args=}  # [unix]
