@@ -15,6 +15,7 @@ build:
   number: 1
   features:
   script:
+    - CFLAGS="CFLAGS -I$PREFIX/include -I/$PREFIX/include/suitesparse" LDFLAGS="$LDFLAGS -L$PREFIX/lib" {{ PYTHON }} -m pip install . --no-build-isolation -vvv  # [build_platform != target_platform]
     - {{ PYTHON }} -m pip install . --no-deps -vvv -Csetup-args=${MESON_ARGS// / -Csetup-args=}  # [unix]
     - {{ PYTHON }} -m pip install . --no-deps -vvv                                               # [win]
   run_exports:
