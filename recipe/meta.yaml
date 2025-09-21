@@ -28,7 +28,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - meson-python                           # [build_platform != target_platform]
-    - sparsesuite                              # [build_platform != target_platform]
+    - suitesparse                              # [build_platform != target_platform]
     - pkg-config
     - swig
   host:
