@@ -1,0 +1,12 @@
+diff -ruN scikit_umfpack-0.4.2/scikits/umfpack/umfpack.i scikit_umfpack-0.4.2-patched/scikits/umfpack/umfpack.i
+--- scikit_umfpack-0.4.2/scikits/umfpack/umfpack.i	2025-07-08 02:45:00
++++ scikit_umfpack-0.4.2-patched/scikits/umfpack/umfpack.i	2025-11-11 17:22:00
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ %init %{
+-    import_array();
++    import_array1(-1);
+ %}
+ 
+ %{
