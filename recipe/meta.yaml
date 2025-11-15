@@ -16,10 +16,6 @@ source:
 build:
   number: 1
   features:
-  script:
-    - CFLAGS="CFLAGS -I$PREFIX/include -I/$PREFIX/include/suitesparse" LDFLAGS="$LDFLAGS -L$PREFIX/lib" {{ PYTHON }} -m pip install . --no-build-isolation -vvv -Csetup-args=${MESON_ARGS// / -Csetup-args=}  # [build_platform != target_platform]
-    - {{ PYTHON }} -m pip install . --no-deps -vvv -Csetup-args=${MESON_ARGS// / -Csetup-args=}  # [unix]
-    - {{ PYTHON }} -m pip install . --no-deps -vvv                                               # [win]
   run_exports:
     - {{ pin_subpackage('scikit-umfpack', max_pin='x.x') }}
 
@@ -31,7 +27,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - meson-python                           # [build_platform != target_platform]
-    - suitesparse                              # [build_platform != target_platform]
+    - suitesparse                            # [build_platform != target_platform]
     - pkg-config
     - swig
   host:
