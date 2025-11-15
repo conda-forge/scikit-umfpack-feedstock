@@ -2,5 +2,5 @@
 setlocal enabledelayedexpansion
 
 
-"%PYTHON%" -m pip install . --no-build-isolation --no-deps -vv
+"%PYTHON%" -m pip install . --no-deps -vv
 
