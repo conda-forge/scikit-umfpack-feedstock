@@ -27,4 +27,4 @@ python:
 suitesparse:
 - '7'
 target_platform:
-- linux-64
+- linux-aarch64
