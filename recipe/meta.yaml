@@ -28,7 +28,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - meson-python                           # [build_platform != target_platform]
     - suitesparse                            # [build_platform != target_platform]
-    - pkg-config
+    - pkgconf
     - swig
   host:
     - libblas
