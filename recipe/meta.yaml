@@ -14,7 +14,7 @@ source:
     - strict-compiler.patch
 
 build:
-  number: 3
+  number: 4
   features:
   run_exports:
     - {{ pin_subpackage('scikit-umfpack', max_pin='x.x') }}
