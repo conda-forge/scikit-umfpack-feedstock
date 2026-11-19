@@ -1,9 +1,11 @@
 c_compiler:
-- vs2022
+- vs
+c_compiler_version:
+- '2022'
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge,conda-forge/label/python_rc
+- conda-forge
 channel_targets:
 - conda-forge main
 libblas:
@@ -22,6 +24,3 @@ suitesparse:
 - '7'
 target_platform:
 - win-64
-zip_keys:
-- - python
-  - channel_sources
